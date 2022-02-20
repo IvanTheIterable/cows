@@ -18,6 +18,8 @@ class QuestionTwoTest {
         assertTrue(farm.lastCow.cow.nickName.equals("cow1"))
         assertTrue(farm.lastCow.prevCow!!.nextCow!!.cow.cowId.equals("1"))
         assertTrue(farm.lastCow.prevCow!!.nextCow!!.cow.nickName.equals("cow1"))
+
+        farm.print()
     }
 
     @Test

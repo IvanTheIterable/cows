@@ -14,7 +14,7 @@ class QuestionOneTest {
 
         assertEquals(1, farm.getSize())
 
-        println(farm)
+        farm.print()
     }
 
     @Test

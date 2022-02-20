@@ -6,6 +6,8 @@ interface Farm {
 
     fun endLifeSpan(cowId: String): Cow?
 
+    fun print()
+
 }
 
 class FarmImpl(
@@ -19,6 +21,10 @@ class FarmImpl(
 
     override fun endLifeSpan(cowId: String): Cow? =
         cows.remove(cowId)
+
+    override fun print() {
+        println(cows.toString())
+    }
 }
 
 class FarmWithoutCollectionsImpl : Farm {
@@ -58,6 +64,16 @@ class FarmWithoutCollectionsImpl : Farm {
 
         return current.cow
 
+    }
+
+    override fun print() {
+        var current = lastCow
+
+        while(current.prevCow != null) {
+            println(current.cow)
+            current = current.prevCow!!
+        }
+        println(current.cow)
     }
 
 }
